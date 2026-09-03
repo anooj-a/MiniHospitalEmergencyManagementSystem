@@ -114,6 +114,10 @@ public class Main {
         System.out.println("     MINI HOSPITAL EMERGENCY MANAGEMENT");
         System.out.println("==============================================");
 
+        System.out.println();
+        System.out.println(" -- Patient Records (BST) --");
+        System.out.println(" ---------------------------");
+        System.out.println();
         System.out.println("1.  Register Patient");
         System.out.println("2.  Search Patient");
         System.out.println("3.  Delete Patient");
@@ -121,12 +125,20 @@ public class Main {
 
         System.out.println("----------------------------------------------");
 
+        System.out.println();
+        System.out.println(" -- Emergency Queue --");
+        System.out.println(" ---------------------");
+        System.out.println();
         System.out.println("5.  Add Patient to Emergency Queue");
         System.out.println("6.  Treat Next Emergency Patient");
         System.out.println("7.  Display Emergency Queue");
 
         System.out.println("----------------------------------------------");
 
+        System.out.println();
+        System.out.println(" -- Treatment History (Stack) --");
+        System.out.println(" -------------------------------");
+        System.out.println();
         System.out.println("8.  Add Treatment Record");
         System.out.println("9.  Remove Latest Treatment");
         System.out.println("10. Display Treatment History");
