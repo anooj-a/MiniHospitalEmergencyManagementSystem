@@ -121,7 +121,7 @@ public class Main {
         System.out.println("1.  Register Patient");
         System.out.println("2.  Search Patient");
         System.out.println("3.  Delete Patient");
-        System.out.println("4.  Display Patients");
+        System.out.println("4.  Display Patients (in-order by ID)");
 
         System.out.println("----------------------------------------------");
 
@@ -130,7 +130,7 @@ public class Main {
         System.out.println(" ---------------------");
         System.out.println();
         System.out.println("5.  Add Patient to Emergency Queue");
-        System.out.println("6.  Treat Next Emergency Patient");
+        System.out.println("6.  Treat Next Emergency Patient (Dequeue - remove from front)");
         System.out.println("7.  Display Emergency Queue");
 
         System.out.println("----------------------------------------------");
@@ -289,23 +289,15 @@ public class Main {
         System.out.println();
         System.out.println("--- Add Emergency Patient ---");
 
-        int id =
-                readPositiveInt(
-                        "Enter Patient ID: "
-                );
+        int id = readPositiveInt("Enter Patient ID: ");
 
 
         // Find patient from BST
-        Patient patient =
-                patientBST.search(id);
+        Patient patient = patientBST.search(id);
 
 
         if (patient == null) {
-
-            System.out.println(
-                    "Patient not found. Register the patient first."
-            );
-
+            System.out.println("Patient not found. Register the patient first.");
             return;
         }
 
@@ -323,8 +315,7 @@ public class Main {
 
 
         // FIFO: first patient added is treated first
-        Patient patient =
-                emergencyQueue.dequeue();
+        Patient patient = emergencyQueue.dequeue();
 
 
         if (patient != null) {
@@ -335,37 +326,26 @@ public class Main {
             patient.displayPatient();
 
 
-            String treatment =
-                    readNonEmpty(
-                            "Treatment provided: "
-                    );
+            String treatment = readNonEmpty("Treatment provided: ");
 
 
-            String doctor =
-                    readNonEmpty(
-                            "Doctor name: "
-                    );
+            String doctor = readNonEmpty("Doctor name: ");
 
 
             // Create completed treatment record
-            Treatment treatmentRecord =
-                    new Treatment(
+            Treatment treatmentRecord = new Treatment(
                             patient.getPatientId(),
                             patient.getPatientName(),
                             treatment,
                             doctor
-                    );
+                );
 
 
             // Add completed treatment to Stack
-            treatmentStack.push(
-                    treatmentRecord
-            );
+            treatmentStack.push( treatmentRecord);
 
 
-            System.out.println(
-                    "Treatment completed and added to treatment history."
-            );
+            System.out.println("Treatment completed and added to treatment history.");
         }
     }
 
