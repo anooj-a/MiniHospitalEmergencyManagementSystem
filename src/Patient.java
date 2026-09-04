@@ -35,20 +35,18 @@ public class Patient {
         return medicalCondition;
     }
 
-    public void displayPatient() {
-        System.out.println("Patient ID: " + patientId);
-        System.out.println("Name: " + patientName);
-        System.out.println("Age: " + age);
-        System.out.println("Contact: " + contactNumber);
-        System.out.println("Medical Condition: " + medicalCondition);
+     public void displayPatient() {
+        System.out.println(
+            "Patient ID: " + patientId + " | Name: " + patientName + " | Age: " + age + " | Contact: " + contactNumber + " | Medical Condition: " + medicalCondition + " | "
+        );
     }
 
     @Override
     public String toString() {
-        return "Patient ID: " + patientId
-                + ", Name: " + patientName
-                + ", Age: " + age
-                + ", Contact: " + contactNumber
-                + ", Medical Condition: " + medicalCondition;
+        return "Patient ID: " + patientId + " | "
+                + " Name: " + patientName + " | "
+                + " Age: " + age + " | "
+                + " Contact: " + contactNumber + " | "
+                + " Medical Condition: " + medicalCondition + " | "; 
     }
 }
