@@ -1,6 +1,6 @@
-# Mini Hospital Emergency Management System
+# Mini Hospital Emergency Management System Using Data Structures
 
-Console-based Java model for a CIT300 Data Structures and Algorithms assignment.
+Console-based Java model for a CIT-300 Data Structures and Algorithms(2) Individual Mid Assignment .
 
 ## Data Structures
 
